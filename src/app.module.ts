@@ -1,13 +1,10 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller.js';
-import { AppService } from './app.service.js';
 import { TopPageModule } from './top-page/top-page.module.js';
 import { ProductModule } from './product/product.module.js';
 import { ReviewModule } from './review/review.module.js';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-	imports: [TopPageModule, ProductModule, ReviewModule],
-	controllers: [AppController],
-	providers: [AppService],
+	imports: [ConfigModule.forRoot(), TopPageModule, ProductModule, ReviewModule],
 })
 export class AppModule {}
