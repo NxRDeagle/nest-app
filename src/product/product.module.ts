@@ -2,6 +2,6 @@ import { Module } from '@nestjs/common';
 import { ProductController } from './product.controller.js';
 
 @Module({
-  controllers: [ProductController]
+	controllers: [ProductController],
 })
 export class ProductModule {}

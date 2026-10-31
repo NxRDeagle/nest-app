@@ -6,8 +6,8 @@ import { ProductModule } from './product/product.module.js';
 import { ReviewModule } from './review/review.module.js';
 
 @Module({
-  imports: [TopPageModule, ProductModule, ReviewModule],
-  controllers: [AppController],
-  providers: [AppService],
+	imports: [TopPageModule, ProductModule, ReviewModule],
+	controllers: [AppController],
+	providers: [AppService],
 })
 export class AppModule {}
