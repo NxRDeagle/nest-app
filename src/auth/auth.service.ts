@@ -13,7 +13,13 @@ export class AuthService {
 		return this.authModel.findOne({ email });
 	}
 
-	async createUser({ email, password }: { email: string; password: string }) {
+	async createUser({
+		email,
+		password,
+	}: {
+		email: string;
+		password: string;
+	}): Promise<AuthDocument> {
 		const newUser = new this.authModel({ email, password });
 		return newUser.save();
 	}
