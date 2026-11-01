@@ -34,7 +34,7 @@ export type TopPageDocument = HydratedDocument<TopPageModel>;
 
 @Schema({ timestamps: true })
 export class TopPageModel {
-	@Prop({ enum: TopLevelCategory })
+	@Prop({ enum: TopLevelCategory, type: Number })
 	firstLevelCategory: TopLevelCategory;
 
 	@Prop()
