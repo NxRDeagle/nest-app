@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { DeleteResult, Model, Types } from 'mongoose';
 import { ReviewDocument, ReviewModel } from './review.model.js';
-import { CreateReviewDto } from '../product/dto/create-review.dto.js';
+import { CreateReviewDto } from './dto/create-review.dto.js';
 
 @Injectable()
 export class ReviewService {
