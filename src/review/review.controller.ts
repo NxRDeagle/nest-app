@@ -13,7 +13,7 @@ import {
 } from '@nestjs/common';
 import { CreateReviewDto } from './dto/create-review.dto.js';
 import { ReviewService } from './review.service.js';
-import { REVIEW_NOT_FOUND } from './constants.js';
+import { REVIEW_NOT_FOUND_ERROR } from './constants.js';
 import { JwtAuthGuard } from '../auth/guards/jwt.guard.js';
 import { IdValidationPipe } from '../pipes/id-validation.pipe.js';
 
@@ -37,7 +37,7 @@ export class ReviewController {
 	async delete(@Param('id', IdValidationPipe) id: string) {
 		const deletedDoc = await this.reviewService.delete(id);
 		if (!deletedDoc) {
-			throw new HttpException(REVIEW_NOT_FOUND, HttpStatus.NOT_FOUND);
+			throw new HttpException(REVIEW_NOT_FOUND_ERROR, HttpStatus.NOT_FOUND);
 		}
 	}
 }
