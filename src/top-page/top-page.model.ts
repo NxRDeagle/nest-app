@@ -35,10 +35,10 @@ export type TopPageDocument = HydratedDocument<TopPageModel>;
 @Schema({ timestamps: true })
 export class TopPageModel {
 	@Prop({ enum: TopLevelCategory, type: Number })
-	firstLevelCategory: TopLevelCategory;
+	firstCategory: TopLevelCategory;
 
 	@Prop()
-	secondLevelCategory: string;
+	secondCategory: string;
 
 	@Prop({ unique: true })
 	alias: string;
@@ -63,6 +63,12 @@ export class TopPageModel {
 
 	@Prop()
 	tagsTitle: string;
+
+	@Prop()
+	createdAt: Date;
+
+	@Prop()
+	updatedAt: Date;
 }
 
 export const TopPageSchema = SchemaFactory.createForClass(TopPageModel);

@@ -7,6 +7,7 @@ import { ProductModule } from './product/product.module.js';
 import { ReviewModule } from './review/review.module.js';
 import { getMongoConfig } from './configs/mongo.config.js';
 import { FilesModule } from './files/files.module.js';
+import { SitemapModule } from './sitemap/sitemap.module.js';
 
 @Module({
 	imports: [
@@ -21,6 +22,7 @@ import { FilesModule } from './files/files.module.js';
 		ProductModule,
 		ReviewModule,
 		FilesModule,
+		SitemapModule,
 	],
 })
 export class AppModule {}
