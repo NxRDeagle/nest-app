@@ -8,6 +8,8 @@ import { ReviewModule } from './review/review.module.js';
 import { getMongoConfig } from './configs/mongo.config.js';
 import { FilesModule } from './files/files.module.js';
 import { SitemapModule } from './sitemap/sitemap.module.js';
+import { TelegramModule } from './telegram/telegram.module.js';
+import { getTelegramConfig } from './configs/telegram.config.js';
 
 @Module({
 	imports: [
@@ -23,6 +25,11 @@ import { SitemapModule } from './sitemap/sitemap.module.js';
 		ReviewModule,
 		FilesModule,
 		SitemapModule,
+		TelegramModule.forRootAsync({
+			imports: [ConfigModule],
+			inject: [ConfigService],
+			useFactory: getTelegramConfig,
+		}),
 	],
 })
 export class AppModule {}
